@@ -545,6 +545,8 @@
 
         async function startCamera() {
           if (running) return;
+             facesEl.textContent = "0";
+         detectedNamesEl.value = "";
           setStatus("Requesting camera…");
           try {
             stream = await navigator.mediaDevices.getUserMedia({
@@ -592,8 +594,8 @@
           btnStopCam.disabled = true;
           btnSwitch.disabled = true;
 
-          facesEl.textContent = "0";
-          detectedNamesEl.value = "";
+         // facesEl.textContent = "0";
+         // detectedNamesEl.value = "";
           setStatus("Stopped");
           log("Camera stopped.");
         }
